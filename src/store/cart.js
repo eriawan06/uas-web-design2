@@ -42,6 +42,9 @@ export default {
                 commit('update', cartItem)
             }
         },
+        set: (state, payload) => {
+            state.carts = payload
+        },
     },
     getters: {
         carts: state => state.carts,
