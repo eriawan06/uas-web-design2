@@ -4,7 +4,7 @@
             <v-btn icon dark @click="drawer=false">
                 <v-icon>close</v-icon>
             </v-btn>
-            <v-toolbar-title>Bookstore</v-toolbar-title>
+            <v-toolbar-title>Laptopia</v-toolbar-title>
         </v-toolbar>
 
         <v-list v-if="guest">
