@@ -1,28 +1,39 @@
 <template>
-    <div>
-        <v-subheader>Your Profile</v-subheader>
-        <v-card flat>
-            <v-container>
-                <v-simple-table>
-                    <tbody>
-                        <tr v-for="(value, key) in user" :key="key">
-                            <td>{{key}}</td>
-                            <td>{{value}}</td>
-                        </tr>
-                    </tbody>
-                </v-simple-table>
-            </v-container>
-        </v-card>
-    </div>
+  <div>
+    <v-subheader>Your Profile</v-subheader>
+    <v-container>
+      <v-btn block color="success" @click="editProfile()"> Edit Profile </v-btn>
+    </v-container>
+    <v-card flat>
+      <v-container>
+        <v-simple-table>
+          <tbody>
+            <tr v-for="(value, key) in user" :key="key">
+              <td>{{ key }}</td>
+              <td>{{ value }}</td>
+            </tr>
+          </tbody>
+        </v-simple-table>
+      </v-container>
+    </v-card>
+  </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters } from "vuex";
 export default {
-    computed: {
-        ...mapGetters({
-            'user': 'auth/user'
-        }),
+  computed: {
+    ...mapGetters({
+      user: "auth/user",
+    }),
+  },
+  methods: {
+    editProfile() {
+      this.$router.push({ path: "/profile/edit" });
     },
-}
+  },
+  created() {
+      console.log(this.user);
+  }
+};
 </script>
