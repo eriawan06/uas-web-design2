@@ -2,12 +2,12 @@
   <div>
     <v-container grid-list-md>
       <v-subheader>
-        All Books
+        All Products
       </v-subheader>
       <v-layout row wrap>
         <v-flex v-for="(book, index) in books" xs6 :key="index">
           <v-card :to="'/book/' + book.slug">
-            <v-img :src="getImage('/books/' + book.cover)" height="150px">
+            <v-img :src="getImage(book.cover)" height="150px">
               <v-container fill-height fluid pa-2>
                 <v-layout fill-height>
                   <v-flex xs12 align-end flexbox>
@@ -62,7 +62,7 @@ export default {
     data() {
         return {
             books: [],
-            page: 0,
+            page: 1,
             lengthPage: 0,
         }
     },

@@ -4,9 +4,9 @@
         <v-card flat>
             <v-container v-if="payment">
                 <v-simple-table>
-                    <tr><th>Order ID</th><td>{{payment.order_id}}</td></tr>
-                    <tr><th>Invoice Number</th><td>{{payment.invoice_number}}</td></tr>
-                    <tr><th>Total Bill</th><td>{{payment.total_price.toLocaleString('id-ID')}}</td></tr>
+                    <tr><th class="text-left">Order ID</th><td>{{payment.order_id}}</td></tr>
+                    <tr><th class="text-left">Invoice Number</th><td>{{payment.invoice_number}}</td></tr>
+                    <tr><th class="text-left">Total Bill</th><td>{{payment.total_price.toLocaleString('id-ID')}}</td></tr>
                 </v-simple-table>
             </v-container>
         </v-card>
@@ -28,7 +28,7 @@
         </v-card>
 
         <v-subheader></v-subheader>
-        <v-card>
+        <v-card class="py-3">
             <v-container>
                 <v-layout row wrap>
                     <v-flex xs12 text-center>

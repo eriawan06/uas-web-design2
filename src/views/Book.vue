@@ -1,30 +1,30 @@
 <template>
-    <div class="about">
+    <div>
         <v-container>
             <v-subheader class="title">{{book.title}}</v-subheader>
-            <v-img v-if="book.cover" :src="getImage('/books/'+book.cover)" height="200px"></v-img>
+            <v-img v-if="book.cover" :src="getImage(book.cover)" height="auto"></v-img>
             <v-subheader>Information</v-subheader>
-            <table class="v-data-table">
+            <table class="v-data-table my-v-data-table">
                 <tbody>
-                    <tr>
+                    <!-- <tr>
                         <th class="text-xs-left">Author</th><td>{{book.author}}</td>
                     </tr>
                     <tr>
                         <th class="text-xs-left">Publisher</th><td>{{book.publisher}}</td>
-                    </tr>
+                    </tr> -->
                     <tr>
-                        <th class="text-xs-left">Price</th><td v-if="book.price">Rp. {{
+                        <th class="text-xs-left text-left">Price</th><td class="text-right" v-if="book.price">Rp. {{
                             book.price.toLocaleString('id-ID')}}</td>
                     </tr>
                     <tr>
-                        <th class="text-xs-left">Weight</th><td>{{book.weight}}</td>
+                        <th class="text-xs-left text-left">Weight</th><td class="text-right">{{book.weight}} Kg</td>
                     </tr>
                     <tr>
-                        <th class="text-xs-left">Stock</th><td>{{book.stock}}</td>
+                        <th class="text-xs-left text-left">Stock</th><td class="text-right">{{book.stock}}</td>
                     </tr>
                     <tr>
-                        <th class="text-xs-left">Categories</th>
-                        <td>
+                        <th class="text-xs-left text-left">Categories</th>
+                        <td class="text-right">
                             <template v-for="category in book.categories" v-key="category.id">
                                 {{category.name}}
                             </template>
@@ -33,7 +33,7 @@
                 </tbody>
             </table>
             <v-subheader>Description</v-subheader>
-            <p class="body-2">{{book.description}}</p>
+            <p class="body-2 text-justify">{{book.description}}</p>
             <div style="position:relative">
                 <v-btn block color="success" @click="buy" :disabled="book.stock==0">
                     <v-icon>save_alt</v-icon> &nbsp;BUY
@@ -42,6 +42,12 @@
         </v-container>
     </div>
 </template>
+
+<style>
+.my-v-data-table {
+    width: 100%;
+}
+</style>
 
 <script>
 import {mapActions} from 'vuex'

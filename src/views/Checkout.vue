@@ -29,7 +29,7 @@
                     <template v-for="(item, index) in carts">
                             <v-list-item :key="'cart'+index">
                                 <v-list-item-avatar>
-                                    <v-img :src="getImage('/books/'+item.cover)"></v-img>
+                                    <v-img :src="getImage(item.cover)"></v-img>
                                 </v-list-item-avatar>
 
                                 <v-list-item-content>
@@ -89,7 +89,7 @@
             </v-card>
         </div>
         <v-subheader>Total</v-subheader>
-        <v-card>
+        <v-card class="mb-6">
             <v-container>
                 <v-layout row wrap>
                     <v-flex xs6 text-center>
@@ -97,7 +97,7 @@
                         <div class="title">{{totalBill.toLocaleString('id-ID')}}</div>
                     </v-flex>
                     <v-flex xs6 text-center>
-                        <v-btn color="orange" @click="dialogConfirm=true" :disabled="totalBill==0">
+                        <v-btn class="mt-2" color="orange" @click="dialogConfirm=true" :disabled="totalBill==0">
                             <v-icon light>attach_money</v-icon> &nbsp;
                             Pay
                         </v-btn>

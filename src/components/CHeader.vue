@@ -6,7 +6,7 @@
             <v-icon>arrow_back</v-icon>
         </v-btn>
 
-        <v-toolbar-title class="white--text">Bookstore</v-toolbar-title>
+        <v-toolbar-title class="white--text">Laptopia</v-toolbar-title>
 
         <v-spacer></v-spacer>
 

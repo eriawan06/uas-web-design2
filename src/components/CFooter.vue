@@ -14,7 +14,7 @@
                     </v-btn>
 
                     <v-flex py-3 white--text xs12 color="primary">
-                        &copy;2020 - Bookstore powered by <strong>Vuetify</strong>
+                        &copy;2020 - Laptopia powered by <strong>Vuetify</strong>
                     </v-flex>
                 </v-layout>
             </v-card>
